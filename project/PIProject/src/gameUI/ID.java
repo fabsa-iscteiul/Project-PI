@@ -1,0 +1,5 @@
+package gameUI;
+
+public enum ID {
+	PLAYER, BASICENEMY, TRAIL, SMARTENEMY, BONUS, FASTXENEMY, FASTYENEMY;
+}
