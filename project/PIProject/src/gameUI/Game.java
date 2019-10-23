@@ -7,7 +7,7 @@ import java.awt.image.BufferStrategy;
 
 public class Game extends Canvas implements Runnable {
 	public enum STATE {
-		Menu, Help, Game;
+		Menu, Help, Game, End;
 	};
 
 	private STATE gameState = STATE.Menu;
@@ -77,6 +77,10 @@ public class Game extends Canvas implements Runnable {
 	}
 
 	private void tick() {
+		if (HUD.HEALTH <= 0 && gameState != STATE.End) {
+			gameState = STATE.End;
+			handler.object.clear();
+		}
 		handler.tick();
 		if (gameState == STATE.Game) {
 			hud.tick();
@@ -112,6 +116,10 @@ public class Game extends Canvas implements Runnable {
 			return var = min;
 		else
 			return var;
+	}
+
+	public HUD getHud() {
+		return hud;
 	}
 
 	public STATE getGameState() {

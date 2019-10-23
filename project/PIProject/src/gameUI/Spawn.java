@@ -22,7 +22,6 @@ public class Spawn {
 		if (hud.getScore() % 150 == 0) {
 			hud.setLevel(hud.getLevel() + 1);
 			double enemy = Math.random();
-			System.out.println(enemy);
 			if (enemy <= 0.4)
 				handler.addObject(new BasicEnemy((int) (Math.random() * 624 + 16), (int) (Math.random() * 461 + 16),
 						ID.BASICENEMY, handler));

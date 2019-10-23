@@ -24,7 +24,6 @@ public class BonusHandler extends Thread {
 			sleep(1000000);
 		} catch (InterruptedException e) {
 			double x = Math.random();
-			System.out.println(x);
 			if (x < 0.4)
 				handler.addObject(new HealthBonus(100, 100, ID.BONUS));
 		}

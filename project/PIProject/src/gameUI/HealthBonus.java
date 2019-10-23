@@ -10,7 +10,7 @@ public class HealthBonus extends GameObject {
 
 	public HealthBonus(int x, int y, ID id) {
 		super(x, y, id);
-		heal = 50; // RANDOM
+		heal = (int) (Math.random() * 40 + 10);
 	}
 
 	@Override
