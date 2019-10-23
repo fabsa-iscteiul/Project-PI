@@ -13,7 +13,7 @@ public class Game extends Canvas implements Runnable {
 	private STATE gameState = STATE.Menu;
 	private Menu menu;
 	private static final long serialVersionUID = 3634038279619051963L;
-	public static final int WIDTH = 640, HEIGHT = WIDTH / 12 * 9;
+	public static final int WIDTH = 640, HEIGHT = 480;
 	private Thread thread;
 	private boolean running = false;
 	private Handler handler;
@@ -132,5 +132,9 @@ public class Game extends Canvas implements Runnable {
 
 	public static void main(String[] args) {
 		new Game();
+	}
+
+	public Spawn getSpawn() {
+		return spawn;
 	}
 }

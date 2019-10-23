@@ -7,7 +7,7 @@ public class HUD {
 
 	public static int HEALTH = 100;
 	private int greenValue = 255;
-	private int score = 0, level = 1;
+	private int score = 0, level = 0;
 
 	public void tick() {
 		HEALTH = Game.clamp(HEALTH, 0, 100);

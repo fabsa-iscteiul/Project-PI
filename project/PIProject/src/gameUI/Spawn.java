@@ -19,7 +19,7 @@ public class Spawn {
 			bonusHandler.interrupt();
 			runs = 1;
 		}
-		if (hud.getScore() % 150 == 0) {
+		if (hud.getScore() % 150 == 0 || hud.getScore() == 0) {
 			hud.setLevel(hud.getLevel() + 1);
 			double enemy = Math.random();
 			if (enemy <= 0.4)

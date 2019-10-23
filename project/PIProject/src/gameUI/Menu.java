@@ -23,7 +23,7 @@ public class Menu extends MouseAdapter {
 		if (game.getGameState() == STATE.Menu) {
 			g.setFont(font);
 			g.setColor(Color.WHITE);
-			g.drawString("Squares", 240, 70);
+			g.drawString("Squares", 210, 70);
 			g.setFont(font2);
 			g.drawRect(210, 150, 200, 64);
 			g.drawString("Play", 270, 190);
@@ -72,9 +72,8 @@ public class Menu extends MouseAdapter {
 			// PLAY
 			if (mouseOver(mx, my, 210, 150, 200, 64)) {
 				game.setGameState(STATE.Game);
+				game.getSpawn().tick();
 				handler.addObject(new Player(Game.WIDTH / 2 - 32, Game.HEIGHT / 2 - 32, ID.PLAYER, handler));
-				handler.addObject(new BasicEnemy((int) (Math.random() * 624 + 16), (int) (Math.random() * 461 + 16),
-						ID.BASICENEMY, handler));
 			}
 		} else if (game.getGameState() == STATE.Help) {
 			// BACK
@@ -89,7 +88,7 @@ public class Menu extends MouseAdapter {
 				game.getHud().setScore(0);
 				game.getHud().setLevel(1);
 				handler.addObject(new Player(Game.WIDTH / 2 - 32, Game.HEIGHT / 2 - 32, ID.PLAYER, handler));
-				handler.addObject(new BasicEnemy((int) (Math.random() * 624 + 16), (int) (Math.random() * 461 + 16),
+				handler.addObject(new BasicEnemy((int) (Math.random() * 614 + 16), (int) (Math.random() * 450 + 16),
 						ID.BASICENEMY, handler));
 			}
 		}
