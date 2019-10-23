@@ -23,7 +23,7 @@ public class Spawn {
 			hud.setLevel(hud.getLevel() + 1);
 			double enemy = Math.random();
 			if (enemy <= 0.4)
-				handler.addObject(new BasicEnemy((int) (Math.random() * 624 + 16), (int) (Math.random() * 461 + 16),
+				handler.addObject(new BasicEnemy((int) (Math.random() * 610 + 16), (int) (Math.random() * 450 + 16),
 						ID.BASICENEMY, handler));
 			else if (enemy > 0.4 && enemy <= 0.65)
 				handler.addObject(new FastXEnemy(300, 200, ID.FASTXENEMY, handler));

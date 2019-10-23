@@ -72,8 +72,8 @@ public class Menu extends MouseAdapter {
 			// PLAY
 			if (mouseOver(mx, my, 210, 150, 200, 64)) {
 				game.setGameState(STATE.Game);
-				game.getSpawn().tick();
 				handler.addObject(new Player(Game.WIDTH / 2 - 32, Game.HEIGHT / 2 - 32, ID.PLAYER, handler));
+				game.getSpawn().tick();
 			}
 		} else if (game.getGameState() == STATE.Help) {
 			// BACK

@@ -14,6 +14,15 @@ public class Handler {
 		}
 	}
 
+	public boolean hasBonus() {
+		for (int i = 0; i < object.size(); i++) {
+			GameObject tempObject = object.get(i);
+			if (tempObject.getId() == ID.BONUS)
+				return true;
+		}
+		return false;
+	}
+
 	public void render(Graphics g) {
 		for (int i = 0; i < object.size(); i++) {
 			GameObject tempObject = object.get(i);

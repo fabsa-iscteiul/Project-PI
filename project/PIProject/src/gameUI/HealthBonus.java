@@ -7,10 +7,14 @@ import java.awt.Rectangle;
 public class HealthBonus extends GameObject {
 
 	private int heal;
+	private int timer;
+	private Handler handler;
 
-	public HealthBonus(int x, int y, ID id) {
+	public HealthBonus(int x, int y, ID id, Handler handler) {
 		super(x, y, id);
+		this.handler = handler;
 		heal = (int) (Math.random() * 40 + 10);
+		timer = 120;
 	}
 
 	@Override
@@ -22,8 +26,12 @@ public class HealthBonus extends GameObject {
 
 	@Override
 	public void tick() {
-		// TODO Auto-generated method stub
-
+		timer--;
+		System.out.println(timer);
+		if (timer <= 0) {
+			System.out.println("removi");
+			handler.removeObject(this);
+		}
 	}
 
 	public int getHeal() {
