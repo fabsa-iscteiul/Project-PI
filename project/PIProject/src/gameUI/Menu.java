@@ -45,11 +45,11 @@ public class Menu extends MouseAdapter {
 		} else if (game.getGameState() == STATE.End) {
 			g.setFont(font);
 			g.setColor(Color.WHITE);
-			g.drawString("You lost", 220, 70);
+			g.drawString("Game Over", 175, 70);
 			g.setFont(font2);
-			g.drawString("Score: " + game.getHud().getScore(), 230, 110);
+			g.drawString("Score: " + game.getHud().getScore(), 230, 130);
 			g.drawRect(210, 350, 200, 64);
-			g.drawString("Try Again", 250, 380);
+			g.drawString("Try Again", 245, 390);
 
 		}
 	}
