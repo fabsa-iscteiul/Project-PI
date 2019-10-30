@@ -7,14 +7,19 @@ import java.awt.Rectangle;
 public class HealthBonus extends GameObject {
 
 	private int heal;
-	private int timer;
+	private double timer;
 	private Handler handler;
 
 	public HealthBonus(int x, int y, ID id, Handler handler) {
 		super(x, y, id);
 		this.handler = handler;
 		heal = (int) (Math.random() * 40 + 10);
-		timer = 120;
+		timer = -Math.log(Math.random());
+		if (timer < 2)
+			timer = 7 - timer;
+		else if (timer > 5)
+			timer = 5;
+		System.out.println(timer);
 	}
 
 	@Override
@@ -26,8 +31,7 @@ public class HealthBonus extends GameObject {
 
 	@Override
 	public void tick() {
-		timer--;
-		System.out.println(timer);
+		timer = timer - ((double) 1 / 60);
 		if (timer <= 0) {
 			System.out.println("removi");
 			handler.removeObject(this);

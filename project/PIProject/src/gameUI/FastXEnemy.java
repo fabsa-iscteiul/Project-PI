@@ -10,8 +10,8 @@ public class FastXEnemy extends GameObject {
 
 	public FastXEnemy(int x, int y, ID id, Handler handler) {
 		super(x, y, id);
-		velX = (float) (Math.random() * 6 + 2);
-		velY = (float) (Math.random() * 6 + 2);
+		velX = (float) (7 + ((Math.sqrt(-2 * Math.log(Math.random()))) * Math.cos(2 * Math.PI * Math.random())));
+		velY = (float) (5 + ((Math.sqrt(-2 * Math.log(Math.random()))) * Math.cos(2 * Math.PI * Math.random())));
 		this.handler = handler;
 	}
 
