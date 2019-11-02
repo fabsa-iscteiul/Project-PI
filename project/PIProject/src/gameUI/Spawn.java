@@ -21,23 +21,22 @@ public class Spawn {
 		}
 		if (hud.getScore() % 150 == 0 || hud.getScore() == 0) {
 			hud.setLevel(hud.getLevel() + 1);
+			double module = 150
+					+ (20 * Math.sqrt(-2 * Math.log(Math.random()))) * Math.cos(2 * Math.PI * Math.random());
+			double angle = Math.random() * 360;
+			int x = (int) (module * Math.cos(Math.toRadians(angle))) + 320;
+			int y = (int) (module * Math.sin(Math.toRadians(angle))) + 240;
+			// ((150+ (20 * Math.sqrt(-2 * Math.log(Math.random()))) * Math.cos(2 * Math.PI
+			// * Math.random()))* (Math.sin(Math.toRadians(Math.random() * 360))) + 240);
 			double enemy = Math.random();
-			if (enemy <= 0.4) {
-				double angleRandom = Math.random();
-				int angle = (int) (angleRandom*360);
-				double firstRandom = Math.random();
-				double secondRandom = Math.random();				
-				int module = (int) (150 + (20 * Math.sqrt(-2 * Math.log(firstRandom))) * Math.cos(2 * Math.PI * secondRandom));
-				int X = (int) (module * Math.cos (angle)) + 320;
-				System.out.println("Valor do X: " + X);
-				handler.addObject(new BasicEnemy((int) (X), (int) (Math.random() * 450 + 16),
-						ID.BASICENEMY, handler));}
+			if (enemy <= 0.4)
+				handler.addObject(new BasicEnemy(x, y, ID.BASICENEMY, handler));
 			else if (enemy > 0.4 && enemy <= 0.65)
-				handler.addObject(new FastXEnemy(300, 200, ID.FASTXENEMY, handler));
+				handler.addObject(new FastXEnemy(x, y, ID.FASTXENEMY, handler));
 			else if (enemy > 0.65 && enemy <= 0.85)
-				handler.addObject(new FastYEnemy(300, 200, ID.FASTYENEMY, handler));
+				handler.addObject(new FastYEnemy(x, y, ID.FASTYENEMY, handler));
 			else if (enemy > 0.85)
-				handler.addObject(new SmartEnemy(300, 200, ID.SMARTENEMY, handler));
+				handler.addObject(new SmartEnemy(x, y, ID.SMARTENEMY, handler));
 		}
 
 	}
