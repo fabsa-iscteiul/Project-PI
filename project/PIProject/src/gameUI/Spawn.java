@@ -26,8 +26,6 @@ public class Spawn {
 			double angle = Math.random() * 360;
 			int x = (int) (module * Math.cos(Math.toRadians(angle))) + 320;
 			int y = (int) (module * Math.sin(Math.toRadians(angle))) + 240;
-			// ((150+ (20 * Math.sqrt(-2 * Math.log(Math.random()))) * Math.cos(2 * Math.PI
-			// * Math.random()))* (Math.sin(Math.toRadians(Math.random() * 360))) + 240);
 			double enemy = Math.random();
 			if (enemy <= 0.4)
 				handler.addObject(new BasicEnemy(x, y, ID.BASICENEMY, handler));

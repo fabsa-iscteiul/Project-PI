@@ -10,8 +10,14 @@ public class BasicEnemy extends GameObject {
 
 	public BasicEnemy(int x, int y, ID id, Handler handler) {
 		super(x, y, id);
-		velX = (float) (5 + ((Math.sqrt(-2 * Math.log(Math.random()))) * Math.cos(2 * Math.PI * Math.random())));
-		velY = (float) (5 + ((Math.sqrt(-2 * Math.log(Math.random()))) * Math.cos(2 * Math.PI * Math.random())));
+		double rnd1,rnd2,p;
+		do {
+			rnd1 = Math.random()*2 - 1;
+			rnd2 = Math.random()*2 -1;
+			p = (rnd1*rnd1 + rnd2 * rnd2)*0.9973 + 0.0027;
+		} while (p>=1);
+		velX =(float) (5 + rnd1*Math.sqrt(-2*Math.log(p)/p));
+		velY =(float) (5 + rnd1*Math.sqrt(-2*Math.log(p)/p));
 		this.handler = handler;
 	}
 
