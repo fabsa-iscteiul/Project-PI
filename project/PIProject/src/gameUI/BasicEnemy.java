@@ -14,7 +14,7 @@ public class BasicEnemy extends GameObject {
 		do {
 			rnd1 = Math.random()*2 - 1;
 			rnd2 = Math.random()*2 -1;
-			p = (rnd1*rnd1 + rnd2 * rnd2)*0.9973 + 0.0027;
+			p = (rnd1*rnd1 + rnd2 * rnd2)*0.9973 + 0.00135;
 		} while (p>=1);
 		velX =(float) (5 + rnd1*Math.sqrt(-2*Math.log(p)/p));
 		velY =(float) (5 + rnd1*Math.sqrt(-2*Math.log(p)/p));
