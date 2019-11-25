@@ -19,7 +19,6 @@ public class HealthBonus extends GameObject {
 			timer = 7 - timer;
 		else if (timer > 5)
 			timer = 5;
-		System.out.println(timer);
 	}
 
 	@Override
@@ -33,7 +32,6 @@ public class HealthBonus extends GameObject {
 	public void tick() {
 		timer = timer - ((double) 1 / 60);
 		if (timer <= 0) {
-			System.out.println("removi");
 			handler.removeObject(this);
 		}
 	}
