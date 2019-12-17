@@ -130,11 +130,11 @@ public class Game extends Canvas implements Runnable {
 		this.gameState = gameState;
 	}
 
-	public static void main(String[] args) {
-		new Game();
-	}
-
 	public Spawn getSpawn() {
 		return spawn;
+	}
+
+	public static void main(String[] args) {
+		new Game();
 	}
 }

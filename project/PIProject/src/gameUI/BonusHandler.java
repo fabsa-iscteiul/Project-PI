@@ -25,6 +25,7 @@ public class BonusHandler extends Thread {
 		} catch (InterruptedException e) {
 			double x = Math.random();
 			if (x < 0.4 && !handler.hasBonus())
+//				Aparece Bónus
 				handler.addObject(new HealthBonus(100, 100, ID.BONUS, handler));
 		}
 		try {
